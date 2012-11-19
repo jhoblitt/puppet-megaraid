@@ -26,7 +26,6 @@ Here is a guided example starting at the [9285-8e](http://www.lsi.com/products/s
 
   * click on the SUPPORT & DOWNLOADS tab
   * expand the MANAGEMENT SOFTWARE AND TOOLS section
-  * [MegaRAID Storage Manager - Linux 64 bit - 5.4](http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/12.08.03.03_Linux_x64_MSM.tar.gz)
   * download [MegaRAID Storage Manager - Linux 64 bit - 5.4](http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/12.08.03.03_Linux_x64_MSM.tar.gz)
   * download [MegaCLI - 5.3 ](http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/8.04.07_MegaCLI.zip)
 
