@@ -31,7 +31,7 @@ Here is a guided example starting at the [9285-8e](http://www.lsi.com/products/s
   * download [MegaCLI - 5.3 ](http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/8.04.07_MegaCLI.zip)
 
 Note that both of those direct links redirect to a page that requires you to
-accept an EULA so .
+accept an EULA.
 
     $ tar -xf 12.08.03.03_Linux_x64_MSM.tar.gz 
     $ ls
