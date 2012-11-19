@@ -1,0 +1,3 @@
+fixtures:
+  symlinks:
+    "megaraid_sm": "#{source_dir}"
