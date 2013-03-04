@@ -1,5 +1,5 @@
 name    'jhoblitt-megaraid_sm'
-version '0.0.1'
+version '0.0.2'
 
 author 'Joshua Hoblitt <jhoblitt@cpan.org>'
 license 'Apache'
