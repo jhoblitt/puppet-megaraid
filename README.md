@@ -85,5 +85,5 @@ Please log tickets and issues at [github](https://github.com/jhoblitt/puppet-meg
 Copyright
 ---------
 
-Copyright (C) 2012 Joshua Hoblitt <jhoblitt@cpan.org>
+Copyright (C) 2012-2013 Joshua Hoblitt <jhoblitt@cpan.org>
 
