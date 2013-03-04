@@ -1,0 +1,12 @@
+`v0.0.2`
+========
+
+Joshua Hoblitt <jhoblitt@cpan.org> (7):
+      * remove duplicate line in README.md
+      * change license from GPLv2 or later to Apache 2.0
+      * cleanup code to pass puppet-lint and add the 'lint' rake target
+      * enable travis-ci support
+      * change module version to v0.0.2
+      * copyright notices
+      * add a negative test for unsupported $::operatingsystem
+
