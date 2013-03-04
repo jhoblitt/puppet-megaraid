@@ -16,3 +16,13 @@ describe 'megaraid_sm' do
   ) end
 end
 
+describe 'megaraid_sm' do
+  let(:title) { 'Debian' }
+  let(:facts) { { :osfamily=> 'Debian' } }
+
+  it do
+    expect {
+      should include_class('megaraid_sm') 
+    }.to raise_error(Puppet::Error, /^Module megaraid_sm is not supported/)
+  end
+end
