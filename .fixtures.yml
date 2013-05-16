@@ -1,3 +1,5 @@
 fixtures:
+  repositories:
+    "wget": "git://github.com/maestrodev/puppet-wget.git"
   symlinks:
     "megaraid_sm": "#{source_dir}"
