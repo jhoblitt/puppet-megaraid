@@ -41,4 +41,23 @@ class megaraid_sm::install {
     ensure  => present,
     require => Package['net-snmp-utils'],
   }
+
+  case $::architecture {
+    'x86_64' : { $cli = '/opt/MegaRAID/MegaCli/MegaCli64' }
+    'i386'   : { $cli = '/opt/MegaRAID/MegaCli/MegaCli' }
+    default  : {
+      fail("Module ${module_name} is not supported on ${::architecture}")
+    }
+  }
+
+  $priority = 1
+  $bin = 'MegaCli'
+
+  exec { "alternatives --install /usr/bin/$bin $bin $cli $priority":
+    path    => "/bin:/sbin:/usr/bin:/usr/sbin",
+    unless  => "test /etc/alternatives/$bin -ef $cli"
+  } -> exec { "alternatives --set $bin $cli":
+    path    => "/bin:/sbin:/usr/bin:/usr/sbin",
+    unless  => "test /etc/alternatives/$bin -ef $cli"
+  }
 }
