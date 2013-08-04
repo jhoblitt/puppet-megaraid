@@ -1,6 +1,8 @@
 Puppet megaraid Module
 =========================
 
+[![Build Status](https://travis-ci.org/jhoblitt/puppet-megaraid.png)](https://travis-ci.org/jhoblitt/puppet-megaraid)
+
 Description
 -----------
 
