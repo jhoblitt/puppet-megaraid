@@ -1,4 +1,4 @@
-# == Class: megaraid_sm::lsiget
+# == Class: megaraid::lsiget
 #
 # installs the `lsiget` utility for LSI MegaRAID controllers
 #
@@ -12,7 +12,7 @@
 #
 # === Examples
 #
-#    class{ 'megaraid_sm::lsiget': }
+#    class{ 'megaraid::lsiget': }
 #
 #
 # === Authors
@@ -25,7 +25,7 @@
 # Copyright (C) 2013 Joshua Hoblitt
 #
 
-class megaraid_sm::lsiget {
+class megaraid::lsiget {
   include wget
 
   $unzip_path       = '/opt/lsi'

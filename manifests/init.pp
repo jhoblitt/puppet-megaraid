@@ -1,4 +1,4 @@
-# == Class: megaraid_sm
+# == Class: megaraid
 #
 # installs the LSI MegaRAID Storage Manager and MegaCLI RAID controller
 # management software
@@ -11,7 +11,7 @@
 #
 # === Examples
 #
-#    class{ 'megaraid_sm': }
+#    class{ 'megaraid': }
 #
 #
 # === Authors
@@ -24,12 +24,12 @@
 # Copyright (C) 2012-2013 Joshua Hoblitt
 #
 
-class megaraid_sm {
+class megaraid {
   if $::osfamily != 'redhat' {
     fail("Module ${module_name} is not supported on ${::operatingsystem}")
   }
 
-  class{ 'megaraid_sm::install': } ->
-  class{ 'megaraid_sm::service': } ->
-  Class[ 'megaraid_sm' ]
+  class{ 'megaraid::install': } ->
+  class{ 'megaraid::service': } ->
+  Class[ 'megaraid' ]
 }

@@ -1,4 +1,4 @@
-Puppet megaraid_sm Module
+Puppet megaraid Module
 =========================
 
 Description
@@ -73,13 +73,13 @@ skeleton](https://github.com/jhoblitt/yum-repo-skel) on github.
 Examples
 --------
 
-    class{ 'megaraid_sm': }
+    class{ 'megaraid: }
 
 
 Support
 -------
 
-Please log tickets and issues at [github](https://github.com/jhoblitt/puppet-megaraid_sm/issues)
+Please log tickets and issues at [github](https://github.com/jhoblitt/puppet-megaraid/issues)
 
 
 Copyright

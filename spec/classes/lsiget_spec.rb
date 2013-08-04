@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe 'megaraid_sm::lsiget' do
+describe 'megaraid::lsiget' do
   let(:title) { 'redhat' }
   let(:facts) { { :osfamily=> 'RedHat', :lsbmajordistrelease => 6 } }
 
   it do
     should include_class('wget')
-    should include_class('megaraid_sm::lsiget')
+    should include_class('megaraid::lsiget')
     should contain_file('/opt/lsi').with({
       'ensure' => 'directory',
     })

@@ -1,4 +1,4 @@
-# == Class: megaraid_sm::install
+# == Class: megaraid::install
 #
 # installs the package(s) that provide the megaraid storage manager
 #
@@ -11,7 +11,7 @@
 # Copyright (C) 2012-2013 Joshua Hoblitt
 #
 
-class megaraid_sm::install {
+class megaraid::install {
 # Installing : sas_snmp-12.05-0200.x86_64                                   3/6
 #Non-fatal POSTIN scriptlet failure in rpm package sas_snmp-12.05-0200.x86_64
 #Can not find snmptrap in /usr/bin

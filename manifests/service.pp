@@ -1,4 +1,4 @@
-# == Class: megaraid_sm::service
+# == Class: megaraid::service
 #
 # enables the megaraid storage manager service
 #
@@ -11,7 +11,7 @@
 # Copyright (C) 2012-2013 Joshua Hoblitt
 #
 
-class megaraid_sm::service {
+class megaraid::service {
   # /etc/init.d/vivaldiframeworkd sources /etc/init.d/msm_profile so there's
   # no need to enable to seperately
   #
