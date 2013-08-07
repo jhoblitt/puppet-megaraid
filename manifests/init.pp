@@ -1,7 +1,13 @@
 # == Class: megaraid
 #
-# installs the LSI MegaRAID Storage Manager and MegaCLI RAID controller
-# management software
+# installs various LSI MegaRAID RAID controller related management software
+#
+# Add this module to a manifest is equivalent to manually including these
+# classes: 
+#
+#    `megaraid::msm`
+#    `megaraid::megacli`
+#    `megaraid::lsiget`
 #
 #
 # === Parameters
@@ -23,13 +29,14 @@
 #
 # Copyright (C) 2012-2013 Joshua Hoblitt
 #
-
 class megaraid {
   if $::osfamily != 'redhat' {
     fail("Module ${module_name} is not supported on ${::operatingsystem}")
   }
 
-  class{ 'megaraid::install': } ->
-  class{ 'megaraid::service': } ->
+  # sequence doesn't actually matter
+  class{ 'megaraid::msm': } ->
+  class{ 'megaraid::megacli': } ->
+  class{ 'megaraid::lsiget': } ->
   Class[ 'megaraid' ]
 }

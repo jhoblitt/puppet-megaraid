@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'megaraid' do
+describe 'megaraid::msm' do
   let(:facts) do
     {
       :osfamily             => 'RedHat',
@@ -12,17 +12,12 @@ describe 'megaraid' do
   context 'RedHat x86_64' do
     let(:title) { 'redhat' }
     it do
-      should include_class('megaraid')
-      should include_class('megaraid::install')
-      should include_class('megaraid::service')
+      should include_class('megaraid::msm')
       should contain_package('MegaRAID_Storage_Manager').with_ensure('present')
-      should contain_package('MegaCli').with_ensure('present')
       should contain_service('vivaldiframeworkd').with({
         'ensure' => 'running',
         'enable' => 'true',
       })
-      should contain_exec('alternatives --install /usr/bin/MegaCli MegaCli /opt/MegaRAID/MegaCli/MegaCli64 1')
-      should contain_exec('alternatives --set MegaCli /opt/MegaRAID/MegaCli/MegaCli64')
     end
   end
 
@@ -38,7 +33,7 @@ describe 'megaraid' do
 
     it do
       expect {
-        should include_class('megaraid') 
+        should include_class('megaraid::msm') 
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on armv7/)
     end
   end
@@ -49,7 +44,7 @@ describe 'megaraid' do
 
     it do
       expect {
-        should include_class('megaraid') 
+        should include_class('megaraid::msm') 
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on Debian/)
     end
   end

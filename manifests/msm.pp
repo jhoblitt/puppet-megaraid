@@ -1,17 +1,28 @@
-# == Class: megaraid::install
+# == Class: megaraid::msm
 #
 # installs the package(s) that provide the megaraid storage manager
+#
+#
+# === Parameters
+#
+# Accepts no parameters.
+#
+#
+# === Examples
+#
+#    class{ 'megaraid::msm': }
+#
 #
 # === Authors
 #
 # Joshua Hoblitt <jhoblitt@cpan.org>
 #
+#
 # === Copyright
 #
 # Copyright (C) 2012-2013 Joshua Hoblitt
 #
-
-class megaraid::install {
+class megaraid::msm inherits megaraid::params {
 # Installing : sas_snmp-12.05-0200.x86_64                                   3/6
 #Non-fatal POSTIN scriptlet failure in rpm package sas_snmp-12.05-0200.x86_64
 #Can not find snmptrap in /usr/bin
@@ -26,38 +37,22 @@ class megaraid::install {
 #Please install the net-snmp agent
 #warning: %post(sas_ir_snmp-12.05-0201.x86_64) scriptlet failed, exit status 1
 
+  # XXX this needs to be turned into a dep on another module
   package { 'net-snmp-utils':
     ensure  => present,
   }
 
-  package { [
-    'Lib_Utils',
-    'Lib_Utils2',
-    'MegaCli',
-    'MegaRAID_Storage_Manager',
-    'sas_ir_snmp',
-    'sas_snmp'
-  ]:
+  package { $megaraid::params::msm_pkg:
     ensure  => present,
     require => Package['net-snmp-utils'],
   }
 
-  case $::architecture {
-    'x86_64' : { $cli = '/opt/MegaRAID/MegaCli/MegaCli64' }
-    'i386'   : { $cli = '/opt/MegaRAID/MegaCli/MegaCli' }
-    default  : {
-      fail("Module ${module_name} is not supported on ${::architecture}")
-    }
-  }
-
-  $priority = 1
-  $bin = 'MegaCli'
-
-  exec { "alternatives --install /usr/bin/$bin $bin $cli $priority":
-    path    => "/bin:/sbin:/usr/bin:/usr/sbin",
-    unless  => "test /etc/alternatives/$bin -ef $cli"
-  } -> exec { "alternatives --set $bin $cli":
-    path    => "/bin:/sbin:/usr/bin:/usr/sbin",
-    unless  => "test /etc/alternatives/$bin -ef $cli"
+  # service was named 'mrmonitor' in older versions
+  service { 'vivaldiframeworkd':
+    ensure     => running,
+    hasstatus  => true,
+    hasrestart => true,
+    enable     => true,
+    require    => Package[ 'MegaRAID_Storage_Manager' ],
   }
 }
