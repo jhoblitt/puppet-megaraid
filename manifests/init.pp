@@ -3,7 +3,7 @@
 # installs various LSI MegaRAID RAID controller related management software
 #
 # Add this module to a manifest is equivalent to manually including these
-# classes: 
+# classes:
 #
 #    `megaraid::msm`
 #    `megaraid::megacli`
