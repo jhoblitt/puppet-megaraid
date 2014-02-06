@@ -10,7 +10,7 @@
 #
 Facter.add("has_megaraid") do
   confine :kernel => :linux
-  confine :is_virtual => "false"
+  confine :is_virtual => false
 
   setcode do
     haslspci = Facter::Util::Resolution.exec('which lspci')
