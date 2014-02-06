@@ -1,6 +1,8 @@
 pkg/
-spec/fixtures/
+spec/fixtures/manifests/
+spec/fixtures/modules/
 Gemfile.lock
 *.orig
 *.rej
 *.patch
+*.swp
