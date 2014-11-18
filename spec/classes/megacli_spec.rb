@@ -10,7 +10,7 @@ describe 'megaraid::megacli' do
       }  
     end
     it do
-      should include_class('megaraid::megacli')
+      should contain_class('megaraid::megacli')
       should contain_package('MegaCli').with_ensure('present')
       should contain_exec('alternatives --install /usr/bin/MegaCli MegaCli /opt/MegaRAID/MegaCli/MegaCli64 1')
       should contain_exec('alternatives --set MegaCli /opt/MegaRAID/MegaCli/MegaCli64')
@@ -26,7 +26,7 @@ describe 'megaraid::megacli' do
       }  
     end
     it do
-      should include_class('megaraid::megacli')
+      should contain_class('megaraid::megacli')
       should contain_package('MegaCli').with_ensure('present')
       should contain_exec('alternatives --install /usr/bin/MegaCli MegaCli /opt/MegaRAID/MegaCli/MegaCli 1')
       should contain_exec('alternatives --set MegaCli /opt/MegaRAID/MegaCli/MegaCli')
@@ -44,7 +44,7 @@ describe 'megaraid::megacli' do
 
     it do
       expect {
-        should include_class('megaraid::megacli') 
+        should contain_class('megaraid::megacli')
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on armv7/)
     end
   end
@@ -55,7 +55,7 @@ describe 'megaraid::megacli' do
 
     it do
       expect {
-        should include_class('megaraid::megalci') 
+        should contain_class('megaraid::megalci')
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on Debian/)
     end
   end

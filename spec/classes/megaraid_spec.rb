@@ -12,10 +12,10 @@ describe 'megaraid' do
   context 'RedHat x86_64' do
     let(:title) { 'redhat' }
     it do
-      should include_class('megaraid')
-      should include_class('megaraid::msm')
-      should include_class('megaraid::megacli')
-      should include_class('megaraid::lsiget')
+      should contain_class('megaraid')
+      should contain_class('megaraid::msm')
+      should contain_class('megaraid::megacli')
+      should contain_class('megaraid::lsiget')
     end
   end
 
@@ -31,7 +31,7 @@ describe 'megaraid' do
 
     it do
       expect {
-        should include_class('megaraid') 
+        should contain_class('megaraid')
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on armv7/)
     end
   end
@@ -42,7 +42,7 @@ describe 'megaraid' do
 
     it do
       expect {
-        should include_class('megaraid') 
+        should contain_class('megaraid')
       }.to raise_error(Puppet::Error, /^Module megaraid is not supported on Debian/)
     end
   end

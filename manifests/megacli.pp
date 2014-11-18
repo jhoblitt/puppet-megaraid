@@ -32,10 +32,10 @@ class megaraid::megacli inherits megaraid::params {
   $bin = 'MegaCli'
 
   exec { "alternatives --install /usr/bin/${bin} ${bin} ${cli} ${priority}":
-    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
-    unless  => "test /etc/alternatives/${bin} -ef ${cli}"
+    path   => '/bin:/sbin:/usr/bin:/usr/sbin',
+    unless => "test /etc/alternatives/${bin} -ef ${cli}"
   } -> exec { "alternatives --set ${bin} ${cli}":
-    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
-    unless  => "test /etc/alternatives/${bin} -ef ${cli}"
+    path   => '/bin:/sbin:/usr/bin:/usr/sbin',
+    unless => "test /etc/alternatives/${bin} -ef ${cli}"
   }
 }
