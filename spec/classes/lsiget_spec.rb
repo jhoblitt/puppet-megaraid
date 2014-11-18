@@ -5,8 +5,8 @@ describe 'megaraid::lsiget' do
   let(:facts) { { :osfamily=> 'RedHat', :lsbmajordistrelease => 6 } }
 
   it do
-    should include_class('wget')
-    should include_class('megaraid::lsiget')
+    should contain_class('wget')
+    should contain_class('megaraid::lsiget')
     should contain_file('/opt/lsi').with({
       'ensure' => 'directory',
     })
