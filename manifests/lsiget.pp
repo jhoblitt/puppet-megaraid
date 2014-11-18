@@ -44,9 +44,9 @@ class megaraid::lsiget {
     require     => File[$unzip_path],
   } ->
   exec { "tar -xf ${package_filename}":
-    path        => ['/bin', '/usr/bin'],
-    cwd         => $unzip_path,
-    creates     => "${unzip_path}/${package_tardir}/lsigetlunix.sh",
+    path    => ['/bin', '/usr/bin'],
+    cwd     => $unzip_path,
+    creates => "${unzip_path}/${package_tardir}/lsigetlunix.sh",
   }
 
 }
